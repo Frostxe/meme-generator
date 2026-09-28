@@ -1,43 +1,110 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Генератор мемов</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Генератор мемов</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
 <main>
+
   <h1>Генератор мемов</h1>
+
   <div class="layout">
-    <section class="panel" aria-label="Настройки">
-      <label for="file">Картинка (если не выбрать — будет цветной фон)</label>
-      <input id="file" type="file" accept="image/*">
 
-      <label for="top">Верхний текст</label>
-      <input id="top" type="text" value="GENERATOR ">
+<!-- ЛЕВАЯ ПАНЕЛЬ -->
+<section class="panel" aria-label="Настройки">
 
-      <label for="bottom">Нижний текст</label>
-      <input id="bottom" type="text" value="MEMES">
+  <label for="file">Своя картинка</label>
+  <input id="file" type="file" accept="image/*">
 
-      <label for="size">Размер текста</label>
-      <input id="size" type="range" min="4" max="16" value="9">
+  <label>Библиотека фотографий</label>
 
-      <div class="row">
-        <div><label for="bg">Цвет фона</label><input id="bg" type="color" value="#2b4eff"></div>
-        <div><label for="fill">Цвет текста</label><input id="fill" type="color" value="#ffffff"></div>
-      </div>
+  <div class="photo-library">
 
-      <button id="download">Скачать PNG</button>
-      <button id="reset" class="secondary">Убрать картинку</button>
-    </section>
+    <button class="photo-card" data-image="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=900&q=85">
+      <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=300&q=80" alt="Собака">
+    </button>
 
-    <section class="stage">
-      <canvas id="canvas" width="700" height="700"></canvas>
-    </section>
+    <button class="photo-card" data-image="https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=900&q=85">
+      <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=300&q=80" alt="Собака">
+    </button>
+
+    <button class="photo-card" data-image="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=900&q=85">
+      <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=300&q=80" alt="Природа">
+    </button>
+
+    <button class="photo-card" data-image="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=300&q=80" alt="Природа">
+    </button>
+
+    <button class="photo-card" data-image="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=900&q=85">
+      <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=300&q=80" alt="Кот">
+    </button>
+
+    <button class="photo-card" data-image="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=900&q=85">
+      <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=300&q=80" alt="Собака">
+    </button>
+
+    <button class="photo-card" data-image="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=900&q=85">
+      <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=300&q=80" alt="Кот">
+    </button>
+
+    <button class="photo-card" data-image="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=900&q=85">
+      <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=300&q=80" alt="Собака">
+    </button>
+
   </div>
+
+  <label for="top">Верхний текст</label>
+  <input id="top" type="text" value="GENERATOR">
+
+  <label for="bottom">Нижний текст</label>
+  <input id="bottom" type="text" value="MEMES">
+
+  <label for="size">Размер текста</label>
+  <input id="size" type="range" min="4" max="16" value="9">
+
+  <div class="row">
+
+    <div>
+      <label for="bg">Цвет фона</label>
+      <input id="bg" type="color" value="#2b4eff">
+    </div>
+
+    <div>
+      <label for="fill">Цвет текста</label>
+      <input id="fill" type="color" value="#ffffff">
+    </div>
+
+  </div>
+
+  <button id="download">Скачать PNG</button>
+
+  <button id="reset" class="secondary">
+    Убрать картинку
+  </button>
+
+</section>
+
+
+<!-- CANVAS -->
+<section class="stage">
+
+  <canvas id="canvas" width="700" height="700"></canvas>
+
+</section>
+
+
+  </div>
+
 </main>
 
 <script src="script.js"></script>
+
 </body>
 </html>
