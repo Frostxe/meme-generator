@@ -1,0 +1,569 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700;900&display=swap');
+
+:root {
+    --red: #e63946;
+    --dark-red: #b91c2a;
+    --cream: #fff3d6;
+    --black: #111111;
+    --white: #ffffff;
+    --orange: #ff9f1c;
+    --cyan: #2ec4b6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: "Nunito", Arial, sans-serif;
+
+    color: var(--black);
+
+    background-color: var(--red);
+
+    background-image:
+        radial-gradient(
+            var(--black) 2px,
+            transparent 2px
+        );
+
+    background-size: 28px 28px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: min(1150px, calc(100% - 30px));
+
+    margin: 35px auto 60px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+h1 {
+    display: inline-block;
+
+    margin: 0 0 8px;
+    padding: 8px 18px;
+
+    font-family: "Bangers", Impact, sans-serif;
+
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    line-height: 0.9;
+
+    letter-spacing: 3px;
+
+    color: var(--cream);
+
+    background: var(--black);
+
+    border: 6px solid var(--black);
+
+    transform: rotate(-2deg);
+
+    box-shadow:
+        10px 10px 0 var(--orange);
+}
+
+.subtitle {
+    display: block;
+
+    width: fit-content;
+
+    margin: 25px 0 35px;
+
+    padding: 8px 15px;
+
+    font-size: 1rem;
+    font-weight: 900;
+
+    background: var(--cream);
+
+    border: 4px solid var(--black);
+
+    box-shadow:
+        6px 6px 0 var(--black);
+
+    transform: rotate(1deg);
+}
+
+
+/* =========================
+   LAYOUT
+========================= */
+
+.layout {
+    display: grid;
+
+    grid-template-columns: 350px 1fr;
+
+    gap: 35px;
+
+    align-items: start;
+}
+
+
+/* =========================
+   LEFT PANEL
+========================= */
+
+.panel {
+    position: relative;
+
+    background: var(--cream);
+
+    border: 5px solid var(--black);
+
+    padding: 25px;
+
+    border-radius: 4px;
+
+    box-shadow:
+        12px 12px 0 var(--black);
+
+    transition: transform 0.2s ease;
+}
+
+.panel:hover {
+    transform: translate(-2px, -2px);
+}
+
+
+/* =========================
+   PANEL DECORATION
+========================= */
+
+.panel::before {
+    content: "CREATE";
+
+    position: absolute;
+
+    top: -20px;
+    right: 18px;
+
+    padding: 5px 10px;
+
+    font-family: "Bangers", Impact, sans-serif;
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+
+    color: var(--white);
+
+    background: var(--cyan);
+
+    border: 4px solid var(--black);
+
+    transform: rotate(5deg);
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+label {
+    display: block;
+
+    margin: 18px 0 7px;
+
+    font-size: 0.95rem;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+label:first-child {
+    margin-top: 0;
+}
+
+
+/* =========================
+   TEXT INPUT
+========================= */
+
+input[type="text"] {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    color: var(--black);
+
+    background: var(--white);
+
+    border: 4px solid var(--black);
+
+    border-radius: 0;
+
+    outline: none;
+
+    transition: 0.15s;
+}
+
+input[type="text"]:focus {
+    background: #fff8a6;
+
+    transform: translateX(3px);
+
+    box-shadow:
+        5px 5px 0 var(--black);
+}
+
+
+/* =========================
+   FILE INPUT
+========================= */
+
+input[type="file"] {
+    width: 100%;
+
+    padding: 10px;
+
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+
+    background: var(--white);
+
+    border: 4px solid var(--black);
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   RANGE
+========================= */
+
+input[type="range"] {
+    width: 100%;
+
+    margin: 10px 0;
+
+    accent-color: var(--red);
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   COLOR
+========================= */
+
+input[type="color"] {
+    width: 55px;
+    height: 40px;
+
+    padding: 2px;
+
+    background: var(--white);
+
+    border: 4px solid var(--black);
+
+    border-radius: 0;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   ROW
+========================= */
+
+.row {
+    display: flex;
+
+    gap: 12px;
+
+    align-items: center;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 14px 18px;
+
+    font-family: "Bangers", Impact, sans-serif;
+
+    font-size: 1.35rem;
+
+    letter-spacing: 1px;
+
+    color: var(--white);
+
+    background: var(--black);
+
+    border: 4px solid var(--black);
+
+    border-radius: 0;
+
+    cursor: pointer;
+
+    box-shadow:
+        6px 6px 0 var(--orange);
+
+    transition:
+        transform 0.12s,
+        box-shadow 0.12s;
+}
+
+button:hover {
+    transform: translate(-3px, -3px);
+
+    box-shadow:
+        10px 10px 0 var(--orange);
+}
+
+button:active {
+    transform: translate(4px, 4px);
+
+    box-shadow: none;
+}
+
+
+/* =========================
+   SECONDARY BUTTON
+========================= */
+
+button.secondary {
+    margin-top: 12px;
+
+    color: var(--black);
+
+    background: var(--white);
+
+    border: 4px solid var(--black);
+
+    box-shadow:
+        6px 6px 0 var(--cyan);
+}
+
+button.secondary:hover {
+    background: #dffaf7;
+
+    box-shadow:
+        10px 10px 0 var(--cyan);
+}
+
+
+/* =========================
+   GENERATE BUTTON
+========================= */
+
+button.generate {
+    color: var(--black);
+
+    background: var(--orange);
+
+    box-shadow:
+        7px 7px 0 var(--black);
+}
+
+button.generate:hover {
+    box-shadow:
+        11px 11px 0 var(--black);
+}
+
+
+/* =========================
+   STAGE
+========================= */
+
+.stage {
+    position: relative;
+
+    min-height: 580px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    background: var(--cream);
+
+    border: 6px solid var(--black);
+
+    box-shadow:
+        15px 15px 0 var(--black);
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   STAGE DECORATION
+========================= */
+
+.stage::before {
+    content: "MEME LAB";
+
+    position: absolute;
+
+    top: 18px;
+    left: 20px;
+
+    padding: 5px 12px;
+
+    font-family: "Bangers", Impact, sans-serif;
+
+    font-size: 24px;
+
+    letter-spacing: 2px;
+
+    background: var(--yellow);
+
+    color: var(--black);
+
+    border: 4px solid var(--black);
+
+    transform: rotate(-4deg);
+}
+
+.stage::after {
+    content: "★";
+
+    position: absolute;
+
+    right: 25px;
+    bottom: 15px;
+
+    font-size: 80px;
+
+    color: var(--red);
+
+    transform: rotate(15deg);
+}
+
+
+/* =========================
+   CANVAS
+========================= */
+
+canvas {
+    display: block;
+
+    max-width: 100%;
+
+    height: auto;
+
+    background: var(--white);
+
+    border: 6px solid var(--black);
+
+    border-radius: 0;
+
+    box-shadow:
+        10px 10px 0 var(--red);
+
+    transition:
+        transform 0.2s ease;
+}
+
+canvas:hover {
+    transform: rotate(1deg) scale(1.01);
+}
+
+
+/* =========================
+   FOCUS
+========================= */
+
+:focus-visible {
+    outline: 5px solid var(--cyan);
+
+    outline-offset: 4px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    main {
+        width: min(94%, 600px);
+
+        margin-top: 25px;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    .stage {
+        min-height: 400px;
+
+        padding: 20px;
+    }
+
+    .panel {
+        box-shadow:
+            8px 8px 0 var(--black);
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 3.2rem;
+
+        letter-spacing: 1px;
+    }
+
+    .subtitle {
+        font-size: 0.85rem;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+    .stage {
+        padding: 12px;
+
+        border-width: 4px;
+    }
+
+    button {
+        font-size: 1.15rem;
+    }
+}
